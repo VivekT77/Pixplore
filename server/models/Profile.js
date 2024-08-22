@@ -15,7 +15,11 @@ const profileSchema=new mongoose.Schema({
     },
     username:{
         type:String,
-    }
+    },
+    contactNumber: {
+		type: Number,
+		trim: true,
+	},
 })
 
 exports.mongoose=mongoose.model("Profile",profileSchema)

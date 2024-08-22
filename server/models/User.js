@@ -42,6 +42,10 @@ const userSchema=new mongoose.Schema({
     token:{
         type:String,
     },
+    contactNumber:{
+        type:Number,
+        required:true,
+    },
     resetPasswordExpires:{
         type:Date,
     },
