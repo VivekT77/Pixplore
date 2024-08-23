@@ -25,7 +25,7 @@ const userSchema=new mongoose.Schema({
         default:0,
     },
     following:{
-        type:Numeber,
+        type:Number,
         default:0,
 
     },

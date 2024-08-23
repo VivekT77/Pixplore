@@ -3,9 +3,14 @@ const app=express()
 require('dotenv').config()
 const database = require("./config/database");
 const PORT = process.env.PORT || 5000;
+
+const userRoutes=require("./routes/User")
+
 database.connect();
 
 app.use(express.json());
+
+app.use("/api/v1/auth",userRoutes)
 
 
 
