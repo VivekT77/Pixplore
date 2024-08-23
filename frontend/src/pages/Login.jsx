@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const Login = () => {
   return (
@@ -27,6 +27,7 @@ const Login = () => {
           <button type='submit' className='common-btn'>
             Log in
           </button>
+          <p>Already a member?Log in</p>
         </form>
       </div>
     </div>
