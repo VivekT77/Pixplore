@@ -3,17 +3,17 @@ const app=express()
 require('dotenv').config()
 const database = require("./config/database");
 const PORT = process.env.PORT || 5000;
-const userRoutes=require("./routes/User")
+const userRoutes=require("./Routes/User")
+const cookieParser = require("cookie-parser");
 
 database.connect();
 
 app.use(express.json());
+app.use(cookieParser());
+
 
 
 app.use("/api/v1/auth",userRoutes);
-
-  
- 
 
 
 app.get("/", (req, res) => {
