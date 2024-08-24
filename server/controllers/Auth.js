@@ -1,9 +1,9 @@
 const User =require("../models/User")
 const Profile=require("../models/Profile")
-const Otp=require("../models/OTP")
 const bcrypt =require("bcrypt")
 const otpGenerator = require("otp-generator");
 const OTP = require("../models/OTP");
+const jwt = require("jsonwebtoken");
 
 
 exports.signup=async (req,res)=>{
@@ -60,14 +60,14 @@ exports.signup=async (req,res)=>{
         // hashed the password
         const hashedPassword=await bcrypt.hash(password,10)
 
-        const userProfileDetails=await Profile.create({
-            about:null,
-            gender:null,
-            website:null,
-            username:null,
-            contactNumber:null,
-
-        })
+            const userProfileDetails = await Profile.create({
+                about: null,
+                gender: null,
+                website: null,
+                username: null,
+                contactNumber: null,
+            });
+        
 
         const user=await User.create({
             firstName,
@@ -97,6 +97,76 @@ exports.signup=async (req,res)=>{
         })
 
     }
+}
+
+exports.login=async (req,res)=>{
+ 
+    try{
+
+           
+    // fetch the data
+    const {email,password}=req.body;
+
+    if(!email || !password){
+        return res.status(400).json({
+            success:false,
+            message:"Required all fields"
+        })
+    }
+
+    const user=await User.findOne({email}).populate("additionalDetails")
+
+
+    if(!user){
+        return res.status(401).json({
+            success:false,
+            message:"User is not registered with us please signup to continue"
+        })
+    }
+
+    if(await bcrypt.compare(password,user.password)){
+        const token=jwt.sign(
+            {email:user.email,id:user._id,accountType:user.accountType},
+            process.env.JWT_SECRET,
+            {
+                expiresIn:"24h",
+            }
+        )
+
+        // save token to user database
+        user.token=token;
+        user.password=undefined;
+
+        // Set cookie for token and return success response
+        const options = {
+        expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+        httpOnly: true,
+         };
+
+         res.cookie("token", token, options).status(200).json({
+            success: true,
+            token,
+            user,
+            message: `User Login Success`,
+          });
+
+
+    }else{
+        return res.status(401).json({
+            success: false,
+            message: `Password is incorrect`,
+          });
+    }
+        
+    }catch(error){
+        console.log(error)
+        return res.status(500).json({
+            success:false,
+            message:"Login Failure please try again"
+        })
+    }
+
+
 }
 
 exports.sendotp=async (req,res)=>{
@@ -155,3 +225,4 @@ exports.sendotp=async (req,res)=>{
         return res.status(500).json({ success: false, error: error.message });
     }
 }
+
