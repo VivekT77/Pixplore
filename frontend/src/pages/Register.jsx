@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import { Link} from "react-router-dom";
+import { CiCalendarDate } from "react-icons/ci";
+import { FaEye } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
   return (
@@ -25,16 +28,27 @@ const Register = () => {
             <label htmlFor='password'   className='block text-sm font-medium text-gray-700 '>
               Password
             </label>
-            <input type='password' id="password" placeholder=" Create a Password" className='common-input' ></input>
+           
+            <div className="relative">
+            <input type='password' id="password" placeholder=" Create a Password"    className="common-input pl-10" required/>
+            <FaEye className="absolute right-5 top-1/2 transform -translate-y-1/2" />
+            </div>
             </div>
             <div className="mb-4">
             <label htmlFor="birthdate" className="block text-sm font-medium text-gray-700">
               Birthdate
             </label>
-            <input
-              type="text"id="birthdate" placeholder="dd-mm-yyyy" className="common-input"    required  />
+            <div className="relative">
+              <input
+                type="text"
+                id="birthdate"
+                placeholder="dd-mm-yyyy"
+                className="common-input pl-10"
+                required
+              />
+              <CiCalendarDate className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            </div>
           </div>
-        
           <button type='submit' className='common-btn'>
             Continue
           </button>
@@ -45,9 +59,11 @@ const Register = () => {
             type="button"
             className="flex items-center justify-center w-full border border-gray-300 rounded-full py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
           >
-        
+            <FcGoogle />
+<span className="ml-2">Continue with Google</span>
+      
 
-            Continue with Google  
+           
           </button>
 
      <p className="flex items-center justify-center mt-6 mb-4">Already a member?<Link to="/login">Login</Link></p>
