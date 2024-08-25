@@ -12,6 +12,10 @@ const categorySchema=new mongoose.Schema({
         required:true,
         trim:true,
     },
+    thumbnail:{
+        type:String,
+        required:true,
+    },
     posts:[
         {
             type:mongoose.Schema.Types.ObjectId,
@@ -21,4 +25,4 @@ const categorySchema=new mongoose.Schema({
 
 })
 
-exports.module=mongoose.model("Category",categorySchema)
+module.exports=mongoose.model("Category",categorySchema)

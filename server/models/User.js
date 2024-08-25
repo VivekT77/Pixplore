@@ -31,8 +31,9 @@ const userSchema=new mongoose.Schema({
     },
     accountType:{
         type:String,
-        enum:["Admin","creator"],
-        required:true
+        enum:["Admin","Creator"],
+        required:true,
+        trim:true
     },
     additionalDetails:{
        type:mongoose.Schema.Types.ObjectId,
