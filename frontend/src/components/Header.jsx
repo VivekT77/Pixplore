@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header className="flex items-center justify-between p-4 bg-white shadow-md">
         
-      <div className="flex items-center space-x-4 font-medium space-x-7">
+      <div className="flex items-center font-medium space-x-7">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Pinterest-logo.png/600px-Pinterest-logo.png"
           alt="Pinterest"
@@ -25,7 +25,7 @@ const Header = () => {
       
      
 
-        <div className="flex items-center space-x-4 ml-auto font-medium space-x-7">
+        <div className="flex items-center ml-auto font-medium space-x-7">
           <Link to="/about" className="hover:text-rose-700">
             About
           </Link>
