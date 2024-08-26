@@ -34,7 +34,7 @@ const First = () => {
       </h2>
       <div className="flex justify-center mt-4">
         <div className="w-2 h-2 bg-gray-400 rounded-full mx-1"></div>
-        <div className="w-2 h-2 bg-blue-600 rounded-full mx-1"></div>
+        <div className="w-2 h-2 bg-green-600 rounded-full mx-1"></div>
         <div className="w-2 h-2 bg-gray-400 rounded-full mx-1"></div>
       </div>
       <button
@@ -42,7 +42,7 @@ const First = () => {
         className="p-5 mt-8 rounded-full transition-colors duration-500"
         style={{ backgroundColor: colors[currentText] }}
       >
-        <span className="text-white text-2xl">⬇</span>
+        <span className="text-white text-2xl " >⬇</span>
       </button>
     </div>
   );
