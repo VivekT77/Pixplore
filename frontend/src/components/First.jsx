@@ -1,5 +1,4 @@
-import  { useState, useEffect } from "react";
-
+import { useState, useEffect } from "react";
 
 const First = () => {
   const [currentText, setCurrentText] = useState(0);
@@ -11,6 +10,7 @@ const First = () => {
     "#88B04B", // Color for "culinary delight"
     "#009B77", // Color for "travel inspiration"
   ];
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentText((prevText) => (prevText + 1) % texts.length);
@@ -19,9 +19,13 @@ const First = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleScroll = () => {
+    document.getElementById("second-section").scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="relative bg-white text-center py-20">
-      <h1 className="text-7xl   font-font-medium">Get your next</h1>
+      <h1 className="text-7xl font-font-medium">Get your next</h1>
       <h2
         className="text-4xl mt-5 font-bold mb-8 transition-colors duration-500"
         style={{ color: colors[currentText] }}
@@ -34,7 +38,8 @@ const First = () => {
         <div className="w-2 h-2 bg-gray-400 rounded-full mx-1"></div>
       </div>
       <button
-        className="p-4 mt-8 rounded-full transition-colors duration-500"
+        onClick={handleScroll}
+        className="p-5 mt-8 rounded-full transition-colors duration-500"
         style={{ backgroundColor: colors[currentText] }}
       >
         <span className="text-white text-2xl">⬇</span>
