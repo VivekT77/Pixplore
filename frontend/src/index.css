@@ -4,11 +4,11 @@
 
 .common-input{
 
-  @apply mt-1  block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm
+  @apply mt-1  block w-full px-3 py-2 border border-gray-300 rounded-2xl shadow-sm
   focus:outline-none sm:text-sm;
 }
 
-.common-btn{
+/* .common-btn{
 
-  @apply w-full mt-2 py-2 px-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500;
-};
+  @apply w-full mt-2 py-2 px-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-2xl shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500;
+}; */
