@@ -9,6 +9,7 @@ import Create from "./pages/Create";
 import About from "./pages/About";
 import Business from "./pages/Business";
 import Blog from "./pages/Blog";
+import Footer from "./pages/Footer";
 
 
 
@@ -28,8 +29,9 @@ const App = () => {
           <Route path="/blog" element={<Blog/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/register" element={<Register/>} />
-
+         
         </Routes>
+        <Footer/>
       </BrowserRouter>    
     </>
   );
