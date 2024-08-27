@@ -9,7 +9,11 @@ import Create from "./pages/Create";
 import About from "./pages/About";
 import Business from "./pages/Business";
 import Blog from "./pages/Blog";
+<<<<<<< HEAD
 import Footer from "./pages/Footer";
+=======
+import Header from "./components/Header";
+>>>>>>> 97b732696dbe5ebf4fc44d80c2889a5380715674
 
 
 
@@ -17,8 +21,10 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
+         <Header />
+
         <Routes>
-         
+
           <Route path="/" element={<Home/>} />
           <Route path="/today" element={<Today/>} />
           <Route path="/watch" element={<Watch/>} />

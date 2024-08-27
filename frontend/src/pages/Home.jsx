@@ -7,7 +7,6 @@ import Fourth from "../components/Fourth";
 const Home = () => {
   return (
     <div>
-      <Header />
       <First/>
       <Second/>
       <Third/>

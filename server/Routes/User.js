@@ -8,12 +8,6 @@ const {
     sendotp,
 } =require("../controllers/Auth")
 
-const {
-    createCategory,
-    showAllCategories,
-    getCategoryDetails
-
-} = require("../controllers/Category")
 
 const {auth,isAdmin}=require("../middlewares/auth")
 
@@ -23,10 +17,6 @@ router.post("/signup",signup)
 router.post("/login",login)
 router.post("/sendotp",sendotp)
 
-// category routes
-router.post("/createCategory",auth, isAdmin, createCategory)
-router.get("/showAllCategories",showAllCategories)
-router.post("/getCategoryDetails",getCategoryDetails)
 
 
 module.exports=router
