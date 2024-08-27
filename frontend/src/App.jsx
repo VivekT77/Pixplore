@@ -9,6 +9,7 @@ import Create from "./pages/Create";
 import About from "./pages/About";
 import Business from "./pages/Business";
 import Blog from "./pages/Blog";
+import Header from "./components/Header";
 
 
 
@@ -16,8 +17,10 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
+         <Header />
+
         <Routes>
-         
+
           <Route path="/" element={<Home/>} />
           <Route path="/today" element={<Today/>} />
           <Route path="/watch" element={<Watch/>} />

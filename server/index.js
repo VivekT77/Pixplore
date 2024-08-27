@@ -4,6 +4,7 @@ require('dotenv').config()
 const database = require("./config/database");
 const PORT = process.env.PORT || 5000;
 const userRoutes=require("./Routes/User")
+const categoryRoutes=require("./Routes/categories")
 const cookieParser = require("cookie-parser");
 const {cloudinaryConnect}=require("./config/cloudinary")
 const fileUpload = require("express-fileupload");
@@ -28,6 +29,7 @@ app.use(cors());
 
 
 app.use("/api/v1/auth",userRoutes);
+app.use("/api/v1/category",categoryRoutes)
 
 
 app.get("/", (req, res) => {
