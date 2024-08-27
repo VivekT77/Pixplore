@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
+import { IoIosArrowDropdown } from "react-icons/io";
 
 const First = () => {
   const [currentText, setCurrentText] = useState(0);
   const texts = ["home decor idea", "fashion trend", "culinary delight", "travel inspiration"];
-   
+  
   const colors = [
     "#FF6F61", // Color for "home decor idea"
     "#6B5B95", // Color for "fashion trend"
@@ -39,10 +40,10 @@ const First = () => {
       </div>
       <button
         onClick={handleScroll}
-        className="p-5 mt-8 rounded-full transition-colors duration-500"
+        className="p-5 mt-20 rounded-full transition-colors duration-500 animate-bounce"
         style={{ backgroundColor: colors[currentText] }}
       >
-        <span className="text-white text-2xl " >⬇</span>
+        <span className="text-white text-7xl"><IoIosArrowDropdown /></span>
       </button>
     </div>
   );
