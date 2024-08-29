@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 
@@ -34,7 +34,7 @@ const Business = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-gray-800">
+    <div className="min-h-screen bg-white text-gray-800 ">
       {/* Header */}
       <header className="flex justify-between items-center p-6 border-b">
         <div className="text-2xl font-semibold flex items-center">
@@ -63,7 +63,7 @@ const Business = () => {
       </header>
 
       {/* Main Content */}
-      <main className="flex flex-col items-center text-center p-12">
+      <main className="flex flex-col items-center text-center p-12 mt-20">
         <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
           Grow your business on Pinterest
         </h1>
