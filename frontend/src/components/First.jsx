@@ -33,7 +33,7 @@ const First = () => {
       >
         {texts[currentText]}
       </h2>
-      <div className="flex justify-center mt-4">
+      <div className="flex justify-center mt-4 ">
         <div className="w-2 h-2 bg-gray-400 rounded-full mx-1"></div>
         <div className="w-2 h-2 bg-green-600 rounded-full mx-1"></div>
         <div className="w-2 h-2 bg-gray-400 rounded-full mx-1"></div>
