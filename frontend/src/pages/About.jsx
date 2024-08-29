@@ -1,4 +1,4 @@
-import Footer from "./Footer";
+
 
 
 const About = () => {
