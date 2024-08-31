@@ -52,7 +52,6 @@ exports.signup = async (req, res) => {
       email,
 
       password: hashedPassword,
-
       additionalDetails: userProfileDetails._id,
       image: `https://api.dicebear.com/5.x/initials/svg?seed=${email}`,
     });
@@ -66,7 +65,7 @@ exports.signup = async (req, res) => {
     console.log(error);
     return res.status(500).json({
       success: false,
-      message: "User can not be registered, please try again",
+      message: "User can not be registered",
     });
   }
 };
