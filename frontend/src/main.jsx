@@ -7,6 +7,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+
 
 
 const store=configureStore({
@@ -20,7 +22,8 @@ createRoot(document.getElementById('root')).render(
         
           <App />
           <Toaster/>
-        
+          <ToastContainer />
+
 
     </Provider>
   </StrictMode>,
