@@ -12,6 +12,9 @@ import Blog from "./pages/Blog";
 import Footer from "./pages/Footer";
 import Header from "./components/Header";
 import GenerateAI from "./pages/GenerateAI";
+import CategoryDetailsPage from "./pages/CategoryDetailsPage"
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
@@ -27,8 +30,13 @@ const App = () => {
           <Route path="/" element={<Home/>} />
           <Route path="/today" element={<Today/>} />
           <Route path="/watch" element={<Watch/>} />
+
+
           <Route path="/explore" element={<Explore/>} />
-          <Route path="/explore/:categoryName" element={<Explore/>} />
+          <Route path="explore/category/:categoryId" element={<CategoryDetailsPage />} />
+
+          {/* <Route path="/explore/:categoryName" element={<Explore/>} /> */}
+
           <Route path="/create" element={<Create/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/business" element={<Business/>} />

@@ -1,4 +1,5 @@
 const mongoose=require("mongoose")
+const Post=require("../models/Post")
 
 
 const categorySchema=new mongoose.Schema({
@@ -10,6 +11,11 @@ const categorySchema=new mongoose.Schema({
     description:{
         type:String,
         required:true,
+        trim:true,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+    },
+    longDescription:{
+        type:String,
+        required:true,
         trim:true,
     },
     thumbnail:{
@@ -19,7 +25,7 @@ const categorySchema=new mongoose.Schema({
     posts:[
         {
             type:mongoose.Schema.Types.ObjectId,
-            ref:"POST",
+            ref:"Post",
         }
     ]
 

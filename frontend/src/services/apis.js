@@ -30,6 +30,7 @@ export const PostEndpoints = {
 // CATEGORIES API
 export const categories = {
   SHOW_ALL_CATEGORIES_API: `${BASE_URL}/category/showAllCategories`,
+  GET_CATEGORY_DETAILS: `${BASE_URL}/category/getCategoryDetails`
 };
 
 // SETTINGS PAGE API

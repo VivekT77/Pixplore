@@ -52,3 +52,58 @@
 .animate-fadeIn {
   animation: fadeIn 1s ease-in-out;
 }
+
+
+/* styles.css */
+
+.modal {
+  position: relative;
+  margin: auto;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.share-btn {
+  display: flex;
+  align-items: center;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.share-btn:hover {
+  background: #e0e0e0;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.close-btn {
+  background: #ff5c5c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.close-btn:hover {
+  background: #e03e3e;
+}
+
