@@ -9,12 +9,13 @@ import Create from "./pages/Create";
 import About from "./pages/About";
 import Business from "./pages/Business";
 import Blog from "./pages/Blog";
-
-
+import React from "react";
 
 const App = () => {
   return (
+    
     <>
+
       <BrowserRouter>
         <Routes>
          
