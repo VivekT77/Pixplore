@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import Eye from "../components/Eye";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +13,7 @@ const Register = () => {
     password: '',
     confirmPassword: ''
   });
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -19,13 +22,41 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (formData.password !== formData.confirmPassword) {
+      toast.error('Passwords do not match!');
+      return;
+    }
+
+    console.log('FormData being sent:', formData);
     try {
-      const response = await axios.post('/api/auth/signup', formData);
+      const response = await axios.post('http://localhost:4000/api/v1/auth/signup', formData, { withCredentials: true });
+
       if (response.data.success) {
-        navigate('/login');
+        toast.success('Registered successfully!', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        setTimeout(() => {
+          navigate('/login');
+        }, 3000); // Wait 3 seconds for toast to finish before navigating
       }
     } catch (error) {
-      console.error(error);
+      console.log('Error details:', error);
+      toast.error('Registration failed!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
 
@@ -66,6 +97,7 @@ const Register = () => {
           <p className="flex items-center justify-center mt-6 mb-4">Already a member? <Link to="/login" className="text-blue-500">Login</Link></p>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

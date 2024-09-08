@@ -1,7 +1,7 @@
 import dish1 from '../assets/premium_photo-1669742928112-19364a33b530.avif';
 import dish2 from '../assets/premium_photo-1661767136966-38d5999f819a.avif';
 import dish3 from '../assets/photo-1633457027853-106d9bed16ce.avif';
-import dish4 from '../assets/photo-1633457027853-106d9bed16ce.avif';
+import dish4 from '../assets/photo-1652690772758-45df96e11c50.avif';
 import { useNavigate } from 'react-router-dom';
 
 const Second = () => {
@@ -20,8 +20,8 @@ const Second = () => {
           <div className="grid grid-cols-2 gap-2 rounded-lg overflow-hidden">
             <img src={dish1} alt="Dish 1" className="w-full h-60 object-cover" />
             <img src={dish2} alt="Dish 2" className="w-full h-full object-cover" />
-            <img src={dish3} alt="Dish 3" className="w-full h-full object-cover" />
-            <img src={dish4} alt="Dish 4" className="w-full h-full object-cover" />
+            <img src={dish3} alt="Dish 3" className="w-full h-60 object-cover" />
+            <img src={dish4} alt="Dish 4" className="w-full h-60 object-cover" />
           </div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full px-4 py-2">
             <span className="flex items-center text-rose-700 font-medium">
