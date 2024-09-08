@@ -85,13 +85,13 @@ const Create = () => {
             <NotificationProfile/>
         </div>
       </div>
-      <div className='pt-4 font-semibold text-2xl hover:text-red-500 fixed left-1/3 ml-36 '>
+      <div className='pt-4 font-semibold text-2xl hover:text-red-500 fixed left-1/3 ml-36  '>
           Create Pin
         </div>
         <div>
 
 
-        <div className="min-h-screen bg-gray-100 flex justify-center items-center p-6">
+        <div className="min-h-screen bg-gray-100 flex justify-center items-center p-6 ">
       <form className="bg-white rounded-lg shadow-lg w-full max-w-3xl" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row">
           {/* Left side: Image Upload Section */}
@@ -172,7 +172,7 @@ const Create = () => {
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
+                className="bg-red-500 mt-5 text-white px-4 py-2 rounded-lg hover:bg-red-600"
               >
                 Save
               </button>

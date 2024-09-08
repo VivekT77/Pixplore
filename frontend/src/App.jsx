@@ -5,6 +5,9 @@ import Register from "./pages/Register";
 import Explore from "./pages/Explore";
 import Create from "./pages/Create";
 import About from "./pages/About";
+import CategoryDetailsPage from "./pages/CategoryDetailsPage";
+import GenerateAI from "./pages/GenerateAI";
+import Footer from "./pages/Footer";
 
 
 
@@ -14,7 +17,6 @@ const App = () => {
     <>
 
       <BrowserRouter>
-         <Header />
 
         <Routes>
 
