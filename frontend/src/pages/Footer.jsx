@@ -5,9 +5,9 @@ const Footer = () => {
     <footer className="bg-slate-700 text-white py-8 px-4">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="mb-4 md:mb-0">
-          <h3 className="text-xl font-semibold text-red-500">Pinterest </h3>
+          <h3 className="text-xl font-semibold text-red-500">Pixplore </h3>
           <p className="text-sm">
-            &copy; {new Date().getFullYear()} Pinterest . All rights reserved.
+            &copy; {new Date().getFullYear()} Pixplore . All rights reserved.
           </p>
         </div>
         <div className="flex space-x-6">

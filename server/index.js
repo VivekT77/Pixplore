@@ -8,7 +8,16 @@ const categoryRoutes=require("./Routes/categories")
 const cookieParser = require("cookie-parser");
 const {cloudinaryConnect}=require("./config/cloudinary")
 const fileUpload = require("express-fileupload");
-const cors = require("cors");
+
+
+
+const cors = require('cors');
+
+app.use(cors({
+  origin: 'http://localhost:5173', // Frontend URL
+  methods: 'GET,POST,PUT,DELETE',
+  credentials: true
+}));
 
 
 database.connect();
@@ -23,8 +32,9 @@ app.use(fileUpload({
   tempFileDir: '/tmp/', // Specify a directory for temporary files
   limits: { fileSize: 50 * 1024 * 1024 }, // Optional: Limit file size to 50MB
 }));
-app.use(cors());
 
+
+app.use(express.json());
 
 
 

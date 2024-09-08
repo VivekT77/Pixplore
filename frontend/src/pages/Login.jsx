@@ -1,8 +1,30 @@
 import { Link } from "react-router-dom";
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from "axios";
+import { useState } from "react";
+
 import Eye from "../components/Eye";
 
 const Login = () => {
+  const [formData, setFormData] = useState({ email: '', password: '' });
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('/api/auth/login', formData);
+      if (response.data.success) {
+        navigate('/');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className=' min-h-screen flex items-center justify-center bg-gray-100'>
       <div className='bg-white p-8 rounded-xl shadow-lg w-full max-w-md'> 
@@ -12,7 +34,7 @@ const Login = () => {
         <h2 className='text-2xl font-semibold text-center mb-6'>
         Log in to see more
         </h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className='mb-4'>
             <label htmlFor='email' className='block text-sm font-semibold text-gray-700 '>
               Email
@@ -23,7 +45,8 @@ const Login = () => {
             <label htmlFor='password' className='block text-sm font-semibold text-gray-700 '>
               Password
             </label>
-              <Eye/>
+              <Eye  onChange={handleChange}/>
+
           </div>
 
           <h1 className="text-sm font-medium hover:underline">Forgot your password?</h1>
