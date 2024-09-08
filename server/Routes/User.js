@@ -1,33 +1,21 @@
-const express=require('express')
-const router=express.Router();
+const express = require('express');
+const router = express.Router();
 
+const { signup, login } = require("../controllers/Auth");
+const { auth, isAdmin } = require("../middlewares/auth");
 
-const {
-    signup,
-    login,
-    sendotp,
-} =require("../controllers/Auth")
+// Authentication routes 
+router.post("/signup", signup);
+router.post("/login", login);
 
-const {
-    createCategory,
-    showAllCategories,
-    getCategoryDetails
+// Example of a protected route for authenticated users
+router.get("/dashboard", auth, (req, res) => {
+  res.json({ message: "Welcome to the user dashboard" });
+});
 
-} = require("../controllers/Category")
+// Example of a protected route for admins only
+router.get("/admin", auth, isAdmin, (req, res) => {
+  res.json({ message: "Welcome to the admin panel" });
+});
 
-const {auth,isAdmin}=require("../middlewares/auth")
-
-
-// authentication routes 
-router.post("/signup",signup)
-router.post("/login",login)
-router.post("/sendotp",sendotp)
-
-// category routes
-router.post("/createCategory",auth, isAdmin, createCategory)
-router.get("/showAllCategories",showAllCategories)
-router.post("/getCategoryDetails",getCategoryDetails)
-
-
-module.exports=router
-
+module.exports = router;

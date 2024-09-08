@@ -10,15 +10,28 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@reduxjs/toolkit": "^2.2.7",
     "axios": "^1.7.5",
     "concurrently": "^8.2.2",
+    "dotenv": "^16.4.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.3.0",
+    "react-modal": "^3.16.1",
     "react-redux": "^9.1.2",
-    "react-router-dom": "^6.26.1"
+    "react-router-dom": "^6.26.1",
+<<<<<<< HEAD
+    "react-toastify": "^10.0.5"
+=======
+    "react-toastify": "^10.0.5",
+    "react-transition-group": "^4.4.5",
+    "toastify": "^2.0.1"
+>>>>>>> d7a7673593396f1740a2f96d314b6b07d8bba36e
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
@@ -32,6 +45,7 @@
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
     "postcss": "^8.4.41",
+    "rollup": "^4.21.1",
     "tailwindcss": "^3.4.10",
     "vite": "^5.4.2"
   }

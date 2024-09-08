@@ -1,0 +1,11 @@
+/* CategoryCard.css */
+.transition-transform {
+    transition: transform 300ms ease-in-out;
+  }
+  .transform {
+    transform: scale(1);
+  }
+  .hover\:scale-105:hover {
+    transform: scale(1.05);
+  }
+  

@@ -1,2 +1,2 @@
-# Pinterest
-This is the clone project of pintrest
+# Pixplore
+Team Project
