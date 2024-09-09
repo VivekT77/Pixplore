@@ -5,21 +5,18 @@ import Register from "./pages/Register";
 import Explore from "./pages/Explore";
 import Create from "./pages/Create";
 import About from "./pages/About";
-import Footer from "./pages/Footer";
-import Header from "./components/Header";
+import CategoryDetailsPage from "./pages/CategoryDetailsPage";
 import GenerateAI from "./pages/GenerateAI";
-import CategoryDetailsPage from "./pages/CategoryDetailsPage"
-import 'react-toastify/dist/ReactToastify.css';
-
-
+import Footer from "./pages/Footer";
 
 
 
 const App = () => {
   return (
+    
     <>
+
       <BrowserRouter>
-         <Header />
 
         <Routes>
 
